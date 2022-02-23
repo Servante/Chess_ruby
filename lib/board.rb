@@ -2,6 +2,12 @@
 
 require_relative 'cell.rb'
 
+
+def reload
+	load 'lib/board.rb'
+end
+
+
 class Board
 		attr_accessor :cells
 
@@ -13,7 +19,7 @@ class Board
 
 		puts <<-HEREDOC
 
-		 1 |  2 |  3 |  4 |  5 |  6 |  7
+		
 		---+----+----+----+----+----+----
 		 #{cells[1][0].value} |  #{cells[1][1].value} |  #{cells[1][2].value} |  #{cells[1][3].value} |  #{cells[1][4].value} |  #{cells[1][5].value} |  #{cells[1][6].value}
 		---+----+----+----+----+----+----
@@ -27,6 +33,7 @@ class Board
 		---+----+----+----+----+----+----
 		 #{cells[6][0].value} |  #{cells[6][1].value} |  #{cells[6][2].value} |  #{cells[6][3].value} |  #{cells[6][4].value} |  #{cells[6][5].value} |  #{cells[6][6].value}
 		---+----+----+----+----+----+----
+		 A |  B |  C |  D |  D |  F |  G
 
 		HEREDOC
 
