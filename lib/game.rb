@@ -12,6 +12,16 @@ class Game
 		@board = Board.new
 	end
 
+	def player_creation
+		player_number = player1.nil? ? 1 : 2
+		display_new_player(player_number)
+		name = gets.chomp
+		side = player_number == 1 ? "white" : "black"
+		player = Player.new(name, side)
+		@current_player = player if @current_player.nil?
+		return player
+	end
+
 	private
 
 	def game_setup
