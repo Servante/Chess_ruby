@@ -6,6 +6,7 @@ module Display
 		puts "Let's play Chess on your terminal. \n\n"
 	end
 
-
-
+	def display_new_player(number)
+		puts "\n\nPlease enter the name for player ##{number}"
+	end
 end
