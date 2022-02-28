@@ -3,8 +3,7 @@
 class Cell
 	attr_accessor :value, :stackable
 
-	def initialize(value = "-", stackable = false)
+	def initialize(value = " ")
 		@value = value
-		@stackable = stackable
 	end
 end
