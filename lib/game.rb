@@ -18,6 +18,7 @@ class Game
 		name = gets.chomp
 		side = player_number == 1 ? "white" : "black"
 		player = Player.new(name, side)
+		@current_player == nil ? @player1 = player : @player2 == player
 		@current_player = player if @current_player.nil?
 		return player
 	end
