@@ -21,7 +21,7 @@ end
 class Pawn < Game_piece
 	def initialize
 		@token = nil
-		@base_moves = [[1,0]]
+		@base_moves = [[0,1]]
 		@moves_list = nil
 		@possible_moves = nil
 		@squares_threatened = nil
@@ -34,7 +34,7 @@ class Rook < Game_piece
 		@moves_list = nil
 		@possible_moves = nil
 		@squares_threatened = nil
-		@base_moves = [[1,0]]
+		@base_moves = [[0,1], [0,2],[0,3],[0,4],[0,5],[0,6],[0,7],[0,-1],[0,-2],[0,-3],[0,-4],[0,-5],[0,-6],[0,-7],[-1,0], [-2,0],[-3,0],[-4,0],[-5,0],[-6,0],[-7,0],[1,0],[2,0],[3,0],[4,0],[5,0],[6,0],[7,0]]
 	end
 end
 

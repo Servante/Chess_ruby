@@ -15,10 +15,10 @@ describe Game_piece do
 
 		context "when game_piece is a pawn and location is [0,0]" do
 
-			it "returns [1,0]" do
+			it "returns [0,1]" do
 				pawn = Pawn.new
 				result = pawn.get_moves([0,0])
-				expect(result).to eq([[1,0]])
+				expect(result).to eq([[0,1]])
 			end
 		end
 	end
