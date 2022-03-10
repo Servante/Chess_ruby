@@ -76,6 +76,7 @@ class Board
 	def create_board
 		hash = Hash.new
 		counter = 1
+		counter2 = 1
 		(8).times do 
 			array = []
 			(8).times do 
@@ -99,3 +100,24 @@ class Board
 	# end
 
 end
+
+
+
+
+
+# def create_board
+# 		hash = Hash.new
+# 		counter = 1
+# 		counter2 = 1
+# 		(8).times do 
+# 			array = []
+# 			(8).times do 
+# 				new_cell = Cell.new
+# 				array << new_cell
+# 			end
+# 			counter_s = counter.to_i
+# 			hash[counter_s] = array
+# 			counter += 1
+# 		end
+# 		return hash
+# 	end

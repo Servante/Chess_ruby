@@ -23,6 +23,19 @@ class Game
 		return player
 	end
 
+	def create_rooks(player)
+		piece = "rook"
+		array = [1,2]
+		side = player.side
+		array.each do |num|
+			player.pieces[(side + "_" + piece + (num.to_s)).to_sym] = Rook.new
+		end
+	end
+
+
+
+
+
 	private
 
 	def game_setup

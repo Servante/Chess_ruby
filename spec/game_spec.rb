@@ -59,4 +59,19 @@ describe Game do
 			end
 		end
 	end
+
+	describe "#create_rooks" do
+
+		let(:player) {Player.new("wes", "white")}
+
+		it "adds two key/value pairs to the player's pieces hash" do
+			game.create_rooks(player)
+			expect(player.pieces.size).to be(2)
+		end
+
+		it "gives the key symbol consisting of the side, piece, and piece number" do
+			game.create_rooks(player)
+			expect(player.pieces.has_key?(:white_rook1)).to be true
+		end
+	end
 end
