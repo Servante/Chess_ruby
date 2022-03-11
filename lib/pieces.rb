@@ -19,12 +19,12 @@ end
 
 class Pawn < Game_piece
 	def initialize
+		@location = nil
 		@token = nil
 		@base_moves = [[0,1]]
 		@moves_list = nil
 		@possible_moves = nil
 		@squares_threatened = nil
-		@location = nil
 	end
 end
 
@@ -41,44 +41,44 @@ end
 
 class Knight < Game_piece
 	def initialize
+		@location = nil
 		@token = nil
 		@moves_list = nil
 		@possible_moves = nil
 		@squares_threatened = nil
 		@base_moves = [[1,0]]
-		@location = nil
 	end
 end
 
 class Bishop < Game_piece
 	def initialize
+		@location = nil
 		@token = nil
 		@moves_list = nil
 		@possible_moves = nil
 		@squares_threatened = nil
 		@base_moves = [[1,0]]
-		@location = nil
 	end
 end
 
 class King < Game_piece
 	def initialize
+		@location = nil
 		@token = nil
 		@moves_list = nil
 		@possible_moves = nil
 		@squares_threatened = nil
 		@base_moves = [[1,0]]
-		@location = nil
 	end
 end
 
 class Queen < Game_piece
 	def initialize
+		@location = nil
 		@token = nil
 		@moves_list = nil
 		@possible_moves = nil
 		@squares_threatened = nil
 		@base_moves = [[1,0]]
-		@location = nil
 	end
 end
