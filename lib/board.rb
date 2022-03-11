@@ -80,6 +80,7 @@ class Board
 		(8).times do 
 			array = []
 			(8).times do 
+				
 				new_cell = Cell.new
 				array << new_cell
 			end

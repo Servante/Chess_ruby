@@ -4,8 +4,7 @@ require 'pry'
 
 class Game_piece
 
-	attr_accessor :token, :squares_threatened, :moves_list, :base_moves
-
+	attr_accessor :token, :location, :squares_threatened, :moves_list, :base_moves, 
 
 	def get_moves(location, result=[])
 		@base_moves.each do |move|
@@ -25,12 +24,14 @@ class Pawn < Game_piece
 		@moves_list = nil
 		@possible_moves = nil
 		@squares_threatened = nil
+		@location = nil
 	end
 end
 
 class Rook < Game_piece
-	def initialize
-		@token = nil
+	def initialize(location)
+		@location = location
+		@token = nil		
 		@moves_list = nil
 		@possible_moves = nil
 		@squares_threatened = nil
@@ -45,6 +46,7 @@ class Knight < Game_piece
 		@possible_moves = nil
 		@squares_threatened = nil
 		@base_moves = [[1,0]]
+		@location = nil
 	end
 end
 
@@ -55,6 +57,7 @@ class Bishop < Game_piece
 		@possible_moves = nil
 		@squares_threatened = nil
 		@base_moves = [[1,0]]
+		@location = nil
 	end
 end
 
@@ -65,6 +68,7 @@ class King < Game_piece
 		@possible_moves = nil
 		@squares_threatened = nil
 		@base_moves = [[1,0]]
+		@location = nil
 	end
 end
 
@@ -75,5 +79,6 @@ class Queen < Game_piece
 		@possible_moves = nil
 		@squares_threatened = nil
 		@base_moves = [[1,0]]
+		@location = nil
 	end
 end
