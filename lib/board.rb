@@ -100,6 +100,143 @@ class Board
 	# 	return new_cell
 	# end
 
+	def create_white_rooks(player)
+		piece = "rook"
+		array = [1,2]
+		side = "white"
+		board_locations = [@board.cells[8][0], @board.cells[8][7]]
+		array.each do |num|
+			location = (board_locations.shift)
+			g_piece = player.pieces[(side + "_" + piece + (num.to_s)).to_sym] = Rook.new(location)
+			board.value = g_piece
+		end
+	end
+
+	def create_white_knights(player)
+		piece = "knights"
+		array = [1,2]
+		side = "white"
+		board_locations = [@board.cells[8][1], @board.cells[8][6]]
+		array.each do |num|
+			location = (board_locations.shift)
+			g_piece = player.pieces[(side + "_" + piece + (num.to_s)).to_sym] = Knight.new(location)
+			board.value = g_piece
+		end
+	end
+
+	def create_white_bishops(player)
+		piece = "bishop"
+		array = [1,2]
+		side = "white"
+		board_locations = [@board.cells[8][2], @board.cells[8][5]]
+		array.each do |num|
+			location = (board_locations.shift)
+			g_piece = player.pieces[(side + "_" + piece + (num.to_s)).to_sym] = Bishop.new(location)
+			board.value = g_piece
+		end
+	end
+
+	def create_white_queen(player)
+		piece = "queen"
+		side = "white"
+		location = @board.cells[8][3]
+		g_piece = player.pieces[(side + "_" + piece).to_sym] = Queen.new(location)
+		location.value = g_piece
+	end
+
+	def create_white_king(player)
+		piece = "king"
+		side = "white"
+		location = @board.cells[8][4]
+		g_piece = player.pieces[(side + "_" + piece).to_sym] = Rook.new(location)
+			board.value = g_piece
+		end
+	end
+
+	def create_white_pawns(player)
+		piece = "rook"
+		array = [1,2]
+		side = "white"
+		board_locations = [@board.cells[8][0], @board.cells[8][7]]
+		array.each do |num|
+			location = (board_locations.shift)
+			g_piece = player.pieces[(side + "_" + piece + (num.to_s)).to_sym] = Rook.new(location)
+			board.value = g_piece
+		end
+	end
+
+	def create_black_rooks(player)
+		piece = "rook"
+		array = [1,2]
+		side = "white"
+		board_locations = [@board.cells[8][0], @board.cells[8][7]]
+		array.each do |num|
+			location = (board_locations.shift)
+			g_piece = player.pieces[(side + "_" + piece + (num.to_s)).to_sym] = Rook.new(location)
+			board.value = g_piece
+		end
+	end
+
+	def create_black_knights(player)
+		piece = "rook"
+		array = [1,2]
+		side = "white"
+		board_locations = [@board.cells[8][0], @board.cells[8][7]]
+		array.each do |num|
+			location = (board_locations.shift)
+			g_piece = player.pieces[(side + "_" + piece + (num.to_s)).to_sym] = Rook.new(location)
+			board.value = g_piece
+		end
+	end
+
+	def create_black_bishops(player)
+		piece = "rook"
+		array = [1,2]
+		side = "white"
+		board_locations = [@board.cells[8][0], @board.cells[8][7]]
+		array.each do |num|
+			location = (board_locations.shift)
+			g_piece = player.pieces[(side + "_" + piece + (num.to_s)).to_sym] = Rook.new(location)
+			board.value = g_piece
+		end
+	end
+
+	def create_black_queen(player)
+		piece = "rook"
+		array = [1,2]
+		side = "white"
+		board_locations = [@board.cells[8][0], @board.cells[8][7]]
+		array.each do |num|
+			location = (board_locations.shift)
+			g_piece = player.pieces[(side + "_" + piece + (num.to_s)).to_sym] = Rook.new(location)
+			board.value = g_piece
+		end
+	end
+
+	def create_black_king(player)
+		piece = "rook"
+		array = [1,2]
+		side = "white"
+		board_locations = [@board.cells[8][0], @board.cells[8][7]]
+		array.each do |num|
+			location = (board_locations.shift)
+			g_piece = player.pieces[(side + "_" + piece + (num.to_s)).to_sym] = Rook.new(location)
+			board.value = g_piece
+		end
+	end
+
+	def create_black_pawns(player)
+		piece = "rook"
+		array = [1,2]
+		side = "white"
+		board_locations = [@board.cells[8][0], @board.cells[8][7]]
+		array.each do |num|
+			location = (board_locations.shift)
+			g_piece = player.pieces[(side + "_" + piece + (num.to_s)).to_sym] = Rook.new(location)
+			board.value = g_piece
+		end
+	end
+
 end
 
 

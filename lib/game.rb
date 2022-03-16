@@ -23,18 +23,6 @@ class Game
 		return player
 	end
 
-	def create_white_rooks(player)
-		piece = "rook"
-		array = [1,2]
-		side = "white"
-		board_locations = [@board.cells[8][0], @board.cells[8][7]]
-		array.each do |num|
-			board = (board_locations.shift)
-			g_piece = player.pieces[(side + "_" + piece + (num.to_s)).to_sym] = Rook.new(board)
-			board.value = g_piece
-		end
-	end
-
 
 	private
 
@@ -42,7 +30,7 @@ class Game
 		display_introduction
 		@player1 = player_creation
 		@player2 = player_creation
-	end
+	end	
 
 end
 

@@ -60,43 +60,43 @@ describe Game do
 		end
 	end
 
-	describe "#create_white_rooks" do
+	# describe "#create_white_rooks" do
 
-		let(:player) {Player.new("wes", "white")}
+	# 	let(:player) {Player.new("wes", "white")}
 
-		before do
-			board = Board.new
-			game.instance_variable_set(:@board, board)
-			game.instance_variable_set(:@player1, player)
-		end
+	# 	before do
+	# 		board = Board.new
+	# 		game.instance_variable_set(:@board, board)
+	# 		game.instance_variable_set(:@player1, player)
+	# 	end
 
-		context "when create_white_rooks is called" do
+	# 	context "when create_white_rooks is called" do
 
-			it "adds two key/value pairs to the player's pieces hash" do
-				game.create_white_rooks(player)
-				expect(player.pieces.size).to be(2)
-			end
+	# 		it "adds two key/value pairs to the player's pieces hash" do
+	# 			game.create_white_rooks(player)
+	# 			expect(player.pieces.size).to be(2)
+	# 		end
 
-			it "gives the key symbol consisting of the side, piece, and piece number" do
-				game.create_white_rooks(player)
-				expect(player.pieces.has_key?(:white_rook1)).to be true
-			end
+	# 		it "gives the key symbol consisting of the side, piece, and piece number" do
+	# 			game.create_white_rooks(player)
+	# 			expect(player.pieces.has_key?(:white_rook1)).to be true
+	# 		end
 
-			it "assigns a rook to board.cells[8][0]" do
-				game.create_white_rooks(player)
-				expect(game.board.cells[8][0].value.class).to be(Rook)
-			end
+	# 		it "assigns a rook to board.cells[8][0]" do
+	# 			game.create_white_rooks(player)
+	# 			expect(game.board.cells[8][0].value.class).to be(Rook)
+	# 		end
 
-			it "assigns a rook to board.cells[8][7]" do
-				game.create_white_rooks(player)
-				expect(game.board.cells[8][7].value.class).to be(Rook)
-			end
+	# 		it "assigns a rook to board.cells[8][7]" do
+	# 			game.create_white_rooks(player)
+	# 			expect(game.board.cells[8][7].value.class).to be(Rook)
+	# 		end
 
-			it "assigns its board location to an instance variable" do
-				game.create_white_rooks(player)
-				rook = game.player1.pieces[:white_rook1]
-				expect(rook.location).to be(game.board.cells[8][0])
-			end
-		end
-	end
+	# 		it "assigns its board location to an instance variable" do
+	# 			game.create_white_rooks(player)
+	# 			rook = game.player1.pieces[:white_rook1]
+	# 			expect(rook.location).to be(game.board.cells[8][0])
+	# 		end
+	# 	end
+	# end
 end
