@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require_relative 'cell.rb'
+require 'pry'
 
 
 def reload
@@ -12,7 +13,10 @@ class Board
 		attr_accessor :cells
 
 	def initialize
-		@cells = create_board
+		binding.pry
+		@cells = board_setup
+		@white_pieces = nil
+		@black_pieces = nil
 	end
 
 	def show(color)
@@ -68,37 +72,27 @@ class Board
 
 		  HEREDOC
 		end
+
+	def create_white_pieces
+		##
 	end
 
 
+	
 	private
 
-	def create_board
-		hash = Hash.new
-		counter = 1
-		counter2 = 1
-		(8).times do 
-			array = []
-			(8).times do 
-				
-				new_cell = Cell.new
-				array << new_cell
-			end
-			counter_s = counter.to_i
-			hash[counter_s] = array
-			counter += 1
+
+
+	def create_cell(counter)
+		if counter == 6
+			new_cell = Cell.new(" ", true)
+		elsif
+			new_cell = Cell.new
 		end
-		return hash
+		return new_cell
 	end
 
-	# def create_cell(counter)
-	# 	if counter == 6
-	# 		new_cell = Cell.new(" ", true)
-	# 	elsif
-	# 		new_cell = Cell.new
-	# 	end
-	# 	return new_cell
-	# end
+	
 
 	def create_white_rooks(player)
 		piece = "rook"
@@ -165,16 +159,16 @@ class Board
 		end
 	end
 
-	def create_black_rooks(player)
+	def create_black_rooks
 		piece = "rook"
 		array = [1,2]
 		side = "white"
-		board_locations = [@board.cells[8][0], @board.cells[8][7]]
-		array.each do |num|
-			location = (board_locations.shift)
-			g_piece = player.pieces[(side + "_" + piece + (num.to_s)).to_sym] = Rook.new(location)
-			board.value = g_piece
-		end
+		# board_locations = [@board.cells[8][0], @board.cells[8][7]]
+		# array.each do |num|
+		# 	location = (board_locations.shift)
+			# g_piece = player.pieces[(side + "_" + piece + (num.to_s)).to_sym] = Rook.new(location)
+			# board.value = g_piece
+		# end
 	end
 
 	def create_black_knights(player)
@@ -235,6 +229,23 @@ class Board
 			g_piece = player.pieces[(side + "_" + piece + (num.to_s)).to_sym] = Rook.new(location)
 			board.value = g_piece
 		end
+	end
+
+	def board_setup
+		hash = Hash.new
+		counter = 1
+		counter2 = 1
+		(8).times do
+			array = []
+			(8).times do
+				new_cell = Cell.new
+				array << new_cell
+			end
+			counter_s = counter.to_i
+			hash[counter_s] = array
+			counter += 1
+		end
+		return hash
 	end
 
 end
