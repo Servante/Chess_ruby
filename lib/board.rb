@@ -14,9 +14,9 @@ class Board
 
 	def initialize
 		# binding.pry
-		@cells = board_setup
-		@white_pieces = create_white_pieces
-		@black_pieces = nil
+		@cells = create_board
+		@white_pieces = Hash.new
+		@black_pieces = Hash.new
 	end
 
 	def show(color)
@@ -74,11 +74,8 @@ class Board
 		end
 	end
 
-	def create_white_pieces
-		##
-	end
 
-	def board_setup
+	def create_board
 		hash = Hash.new
 		counter = 1
 		counter2 = 1
@@ -94,9 +91,15 @@ class Board
 		end
 		return hash
 	end
+
+def board_setup
+	create_white_pieces
+	create_black_pieces
+end
+
 	
 	private
-	
+
 
 	def create_cell(counter) #redundant code
 		if counter == 6
@@ -106,7 +109,24 @@ class Board
 		end
 		return new_cell
 	end
-	
+
+	def create_white_pieces
+		create_white_rooks
+		create_white_knights
+		create_white_bishops
+		create_white_queen
+		create_white_king
+		create_white_pawn
+	end
+
+	def create_black_pieces
+		create_black_rooks
+		create_black_knights
+		create_black_bishops
+		create_black_queen
+		create_black_king
+		create_black_pawns
+	end	
 
 	def create_white_rooks(player)
 		piece = "rook"
