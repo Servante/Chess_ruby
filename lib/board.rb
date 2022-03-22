@@ -10,12 +10,12 @@ end
 
 
 class Board
-		attr_accessor :cells
+	attr_accessor :cells, :white_pieces, :black_pieces
 
 	def initialize
-		binding.pry
+		# binding.pry
 		@cells = board_setup
-		@white_pieces = nil
+		@white_pieces = create_white_pieces
 		@black_pieces = nil
 	end
 
@@ -72,18 +72,33 @@ class Board
 
 		  HEREDOC
 		end
+	end
 
 	def create_white_pieces
 		##
 	end
 
-
+	def board_setup
+		hash = Hash.new
+		counter = 1
+		counter2 = 1
+		(8).times do
+			array = []
+			(8).times do
+				new_cell = Cell.new
+				array << new_cell
+			end
+			counter_s = counter.to_i
+			hash[counter_s] = array
+			counter += 1
+		end
+		return hash
+	end
 	
 	private
+	
 
-
-
-	def create_cell(counter)
+	def create_cell(counter) #redundant code
 		if counter == 6
 			new_cell = Cell.new(" ", true)
 		elsif
@@ -91,7 +106,6 @@ class Board
 		end
 		return new_cell
 	end
-
 	
 
 	def create_white_rooks(player)
@@ -143,8 +157,8 @@ class Board
 		side = "white"
 		location = @board.cells[8][4]
 		g_piece = player.pieces[(side + "_" + piece).to_sym] = Rook.new(location)
-			board.value = g_piece
-		end
+		board.value = g_piece
+	
 	end
 
 	def create_white_pawns(player)
@@ -231,23 +245,7 @@ class Board
 		end
 	end
 
-	def board_setup
-		hash = Hash.new
-		counter = 1
-		counter2 = 1
-		(8).times do
-			array = []
-			(8).times do
-				new_cell = Cell.new
-				array << new_cell
-			end
-			counter_s = counter.to_i
-			hash[counter_s] = array
-			counter += 1
-		end
-		return hash
-	end
-
+	
 end
 
 
