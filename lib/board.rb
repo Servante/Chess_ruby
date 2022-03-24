@@ -92,10 +92,11 @@ class Board
 		return hash
 	end
 
-def board_setup
-	create_white_pieces
-	create_black_pieces
-end
+	def board_setup
+		create_white_pieces
+		create_black_pieces
+		#assign_pieces
+	end
 
 	
 	private
@@ -128,15 +129,14 @@ end
 		create_black_pawns
 	end	
 
-	def create_white_rooks(player)
+	def create_white_rooks
 		piece = "rook"
 		array = [1,2]
 		side = "white"
-		board_locations = [@board.cells[8][0], @board.cells[8][7]]
+		board_locations = [[8,0], [8,7]]
 		array.each do |num|
 			location = (board_locations.shift)
-			g_piece = player.pieces[(side + "_" + piece + (num.to_s)).to_sym] = Rook.new(location)
-			board.value = g_piece
+			board.cells[location[0][location[1].value[(side + "_" + piece + (num.to_s)).to_sym] = Rook.new(location)
 		end
 	end
 
