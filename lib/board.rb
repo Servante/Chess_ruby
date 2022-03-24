@@ -129,6 +129,10 @@ class Board
 		create_black_pawns
 	end	
 
+	def assign_to_board(g_piece, location)
+		board.cells[location[0]][location[1]].value = g_piece
+	end
+
 	def create_white_rooks
 		piece = "rook"
 		array = [1,2]
@@ -136,7 +140,9 @@ class Board
 		board_locations = [[8,0], [8,7]]
 		array.each do |num|
 			location = (board_locations.shift)
-			board.cells[location[0][location[1].value[(side + "_" + piece + (num.to_s)).to_sym] = Rook.new(location)
+			name = (side + "_" + piece + (num.to_s))
+			game_piece = Rook.new(location, name)
+			assign_to_board(game_piece, location)
 		end
 	end
 
