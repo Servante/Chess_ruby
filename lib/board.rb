@@ -16,7 +16,7 @@ class Board
 		# binding.pry
 		@cells = create_board
 		@white_pieces = create_white_pieces
-		@black_pieces = Hash.new
+		@black_pieces = create_black_pieces
 	end
 
 	def show(color)
@@ -91,13 +91,6 @@ class Board
 		end
 		return hash
 	end
-
-	def board_setup
-		create_white_pieces
-		create_black_pieces
-		#assign_pieces
-	end
-
 
 	def create_white_pieces
 		game_bag = {
