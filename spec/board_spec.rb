@@ -28,6 +28,14 @@ describe Board do
 	# 	end
 	# end
 
+	describe '#initialize' do
+
+		it 'creates a new instance of Board' do
+			board = Board.new
+			expect(board.class).to be(Board)
+		end
+	end
+
 	describe '#create_white_pieces' do
                                                                                                                                      
 
