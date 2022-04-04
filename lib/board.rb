@@ -140,6 +140,7 @@ class Board
 
 	def create_white_pawns
 		piece = "pawn"
+		token = "\e[36m\u265f\e[0m"
 		num = [1,2,3,4,5,6,7,8]
 		side = "white"
 		results = []
@@ -147,7 +148,7 @@ class Board
 		num.each do |num|
 			location = (board_locations.shift)
 			name = set_name(side, piece, num)
-			game_piece = Pawn.new(location, name)
+			game_piece = Pawn.new(location, name, token)
 			assign_to_board(game_piece, location)
 			results << game_piece
 		end
@@ -156,6 +157,7 @@ class Board
 
 	def create_white_rooks
 		piece = "rook"
+		token = "\e[36m\u2656\e[0m"
 		num = [1,2]
 		side = "white"
 		results = []
@@ -163,7 +165,7 @@ class Board
 		num.each do |num|
 			location = (board_locations.shift)
 			name = set_name(side, piece, num)
-			game_piece = Rook.new(location, name)
+			game_piece = Rook.new(location, name, token)
 			assign_to_board(game_piece, location)
 			results << game_piece
 		end
@@ -172,6 +174,7 @@ class Board
 
 	def create_white_knights  
 		piece = "knight"
+		token = "\e[36m\u2658\e[0m"
 		num = [1,2]
 		side = "white"
 		results = []
@@ -179,7 +182,7 @@ class Board
 		num.each do |num|
 			location = (board_locations.shift)
 			name = set_name(side, piece, num)
-			game_piece = Knight.new(location, name)
+			game_piece = Knight.new(location, name, token)
 			assign_to_board(game_piece, location)
 			results << game_piece
 		end
@@ -188,6 +191,7 @@ class Board
 
 	def create_white_bishops
 		piece = "bishop"
+		token = "\e[36m\u2657\e[0m"
 		num = [1,2]
 		side = "white"
 		results = []
@@ -195,7 +199,7 @@ class Board
 		num.each do |num|
 			location = (board_locations.shift)
 			name = set_name(side, piece, num)
-			game_piece = Bishop.new(location, name)
+			game_piece = Bishop.new(location, name, token)
 			assign_to_board(game_piece, location)
 			results << game_piece
 		end
@@ -204,11 +208,12 @@ class Board
 
 	def create_white_queen
 		piece = "queen"
+		token = "\e[36m\u2655\e[0m"
 		side = "white"
 		location = [8,3]
 		results = []
 		name = set_name(side, piece)
-		game_piece = Queen.new(location, name)
+		game_piece = Queen.new(location, name, token)
 		assign_to_board(game_piece, location)
 		results << game_piece
 		return results		
@@ -216,11 +221,12 @@ class Board
 
 	def create_white_king
 		piece = "king"
+		token = "\e[36m\u2654\e[0m"
 		side = "white"
 		location = [8,4]
 		results = []
 		name = set_name(side, piece)
-		game_piece = King.new(location, name)
+		game_piece = King.new(location, name, token)
 		assign_to_board(game_piece, location)
 		results << game_piece
 		return results	
@@ -228,6 +234,7 @@ class Board
 
 	def create_black_pawns
 		piece = "pawn"
+		token = "\e[35m\u265f\e[0m"
 		num = [1,2,3,4,5,6,7,8]
 		side = "black"
 		results = []
@@ -235,7 +242,7 @@ class Board
 		num.each do |num|
 			location = (board_locations.shift)
 			name = set_name(side, piece, num)
-			game_piece = Pawn.new(location, name)
+			game_piece = Pawn.new(location, name, token)
 			assign_to_board(game_piece, location)
 			results << game_piece
 		end
@@ -244,6 +251,7 @@ class Board
 
 	def create_black_rooks
 		piece = "rook"
+		token = "\e[35m\u265c\e[0m"
 		num = [1,2]
 		side = "black"
 		results = []
@@ -251,7 +259,7 @@ class Board
 		num.each do |num|
 			location = (board_locations.shift)
 			name = set_name(side, piece, num)
-			game_piece = Rook.new(location, name)
+			game_piece = Rook.new(location, name, token)
 			assign_to_board(game_piece, location)
 			results << game_piece
 		end
@@ -260,6 +268,7 @@ class Board
 
 	def create_black_knights  
 		piece = "knight"
+		token = "\e[35m\u265e\e[0m" 
 		num = [1,2]
 		side = "black"
 		results = []
@@ -267,7 +276,7 @@ class Board
 		num.each do |num|
 			location = (board_locations.shift)
 			name = set_name(side, piece, num)
-			game_piece = Knight.new(location, name)
+			game_piece = Knight.new(location, name, token)
 			assign_to_board(game_piece, location)
 			results << game_piece
 		end
@@ -276,6 +285,7 @@ class Board
 
 	def create_black_bishops
 		piece = "bishop"
+		token = "\e[35m\u265d\e[0m"
 		num = [1,2]
 		side = "black"
 		results = []
@@ -283,7 +293,7 @@ class Board
 		num.each do |num|
 			location = (board_locations.shift)
 			name = set_name(side, piece, num)
-			game_piece = Bishop.new(location, name)
+			game_piece = Bishop.new(location, name, token)
 			assign_to_board(game_piece, location)
 			results << game_piece
 		end
@@ -292,11 +302,12 @@ class Board
 
 	def create_black_queen
 		piece = "queen"
+		token = "\e[35m\u265b\e[0m"
 		side = "black"
 		location = [1,3]
 		results = []
 		name = set_name(side, piece)
-		game_piece = Queen.new(location, name)
+		game_piece = Queen.new(location, name, token)
 		assign_to_board(game_piece, location)
 		results << game_piece
 		return results		
@@ -304,11 +315,12 @@ class Board
 
 	def create_black_king
 		piece = "king"
+		token = "\e[35m\u265a\e[0m" 
 		side = "black"
 		location = [1,4]
 		results = []
 		name = set_name(side, piece)
-		game_piece = King.new(location, name)
+		game_piece = King.new(location, name, token)
 		assign_to_board(game_piece, location)
 		results << game_piece
 		return results	
