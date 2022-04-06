@@ -5,7 +5,7 @@ class Game
 	include Display
 	attr_accessor :player1, :player2, :current_player, :board
 
-	def initalize 
+	def initialize 
 		@player1 = nil
 		@player2 = nil
 		@current_player = nil
@@ -23,6 +23,11 @@ class Game
 		return player
 	end
 
+	def assign_pieces
+		player1.pieces = board.white_pieces
+		player2.pieces = board.black_pieces
+	end
+
 
 	private
 
@@ -30,7 +35,10 @@ class Game
 		display_introduction
 		@player1 = player_creation
 		@player2 = player_creation
+		assign_pieces
 	end	
+
+
 
 end
 
