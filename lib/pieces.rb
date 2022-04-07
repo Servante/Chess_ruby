@@ -51,7 +51,7 @@ class Knight < Game_piece
 		@moves_list = nil
 		@possible_moves = nil
 		@squares_threatened = nil
-		@base_moves = [[1,0]]
+		@base_moves = [[1,2],[-1,2],[-2,1],[-2,-1],[2,1],[2,-1],[-1,-2],[1,-2]]
 		@value = 3
 	end
 end
@@ -64,7 +64,7 @@ class Bishop < Game_piece
 		@moves_list = nil
 		@possible_moves = nil
 		@squares_threatened = nil
-		@base_moves = [[1,0]]
+		@base_moves = [[1,1],[2,2],[3,3],[4,4],[5,5],[6,6],[7,7],[-1,-1],[-2,-2],[-3,-3],[-4,-4],[-5,-5],[-6,-6],[-7,-7],[-1,1],[-2,2],[-3,3],[-4,4],[-5,5],[-6,6],[-7,7],[1,-1],[2,-2],[3,-3],[4,-4],[5,-5],[6,-6],[7,-7]]
 		@value = 3
 	end
 end
@@ -77,7 +77,7 @@ class King < Game_piece
 		@moves_list = nil
 		@possible_moves = nil
 		@squares_threatened = nil
-		@base_moves = [[1,0]]
+		@base_moves = [[1,1],[1,0],[1,-1],[0,-1],[-1,-1],[-1,0],[-1,-1],[-1,0],[-1,1]]
 		@value = nil
 	end
 end
@@ -90,7 +90,7 @@ class Queen < Game_piece
 		@moves_list = nil
 		@possible_moves = nil
 		@squares_threatened = nil
-		@base_moves = [[1,0]]
+		@base_moves = [[1,1],[2,2],[3,3],[4,4],[5,5],[6,6],[7,7],[-1,-1],[-2,-2],[-3,-3],[-4,-4],[-5,-5],[-6,-6],[-7,-7],[-1,1],[-2,2],[-3,3],[-4,4],[-5,5],[-6,6],[-7,7],[1,-1],[2,-2],[3,-3],[4,-4],[5,-5],[6,-6],[7,-7],[0,1],[0,2],[0,3],[0,4],[0,5],[0,6],[0,7],[0,-1],[0,-2],[0,-3],[0,-4],[0,-5],[0,-6],[0,-7],[-1,0], [-2,0],[-3,0],[-4,0],[-5,0],[-6,0],[-7,0],[1,0],[2,0],[3,0],[4,0],[5,0],[6,0],[7,0]]
 		@value = 9
 	end
 end
