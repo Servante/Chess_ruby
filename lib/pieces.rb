@@ -4,7 +4,7 @@ require 'pry'
 
 class Game_piece
 
-	attr_accessor :name, :location, :token, :base_moves, :moves_list, :squares_threatened, :value 
+	attr_accessor :name, :location, :token, :base_moves, :moves_list, :squares_threatened, :value, :first_move 
 
 	def get_moves(location, result=[])
 		@base_moves.each do |move|
@@ -27,6 +27,7 @@ class Pawn < Game_piece
 		@possible_moves = nil
 		@squares_threatened = nil
 		@value = 1
+		@first_move = true
 	end
 end
 
