@@ -4,7 +4,7 @@ require 'pry'
 
 class Game_piece
 
-	attr_accessor :name, :location, :token, :base_moves, :moves_list, :squares_threatened, :value, :first_move 
+	attr_accessor :name, :location, :token, :base_moves, :possible_moves, :squares_threatened, :value, :first_move 
 
 	def get_moves(location, result=[])
 		@base_moves.each do |move|
@@ -23,7 +23,6 @@ class Pawn < Game_piece
 		@name = name
 		@token = token
 		@base_moves = [[0,1]]
-		@moves_list = nil
 		@possible_moves = nil
 		@squares_threatened = nil
 		@value = 1
@@ -35,8 +34,7 @@ class Rook < Game_piece
 	def initialize(location, name, token)
 		@location = location
 		@name = name
-		@token = token		
-		@moves_list = nil
+		@token = token
 		@possible_moves = nil
 		@squares_threatened = nil
 		@base_moves = [[0,1], [0,2],[0,3],[0,4],[0,5],[0,6],[0,7],[0,-1],[0,-2],[0,-3],[0,-4],[0,-5],[0,-6],[0,-7],[-1,0], [-2,0],[-3,0],[-4,0],[-5,0],[-6,0],[-7,0],[1,0],[2,0],[3,0],[4,0],[5,0],[6,0],[7,0]]
@@ -49,7 +47,6 @@ class Knight < Game_piece
 		@location = location
 		@name = name
 		@token = token
-		@moves_list = nil
 		@possible_moves = nil
 		@squares_threatened = nil
 		@base_moves = [[1,2],[-1,2],[-2,1],[-2,-1],[2,1],[2,-1],[-1,-2],[1,-2]]
@@ -62,7 +59,6 @@ class Bishop < Game_piece
 		@location = location
 		@name = name
 		@token = token
-		@moves_list = nil
 		@possible_moves = nil
 		@squares_threatened = nil
 		@base_moves = [[1,1],[2,2],[3,3],[4,4],[5,5],[6,6],[7,7],[-1,-1],[-2,-2],[-3,-3],[-4,-4],[-5,-5],[-6,-6],[-7,-7],[-1,1],[-2,2],[-3,3],[-4,4],[-5,5],[-6,6],[-7,7],[1,-1],[2,-2],[3,-3],[4,-4],[5,-5],[6,-6],[7,-7]]
@@ -75,7 +71,6 @@ class King < Game_piece
 		@location = location
 		@name = name
 		@token = token
-		@moves_list = nil
 		@possible_moves = nil
 		@squares_threatened = nil
 		@base_moves = [[1,1],[1,0],[1,-1],[0,-1],[-1,-1],[-1,0],[-1,-1],[-1,0],[-1,1]]
@@ -88,7 +83,6 @@ class Queen < Game_piece
 		@location = location
 		@name = name
 		@token = token
-		@moves_list = nil
 		@possible_moves = nil
 		@squares_threatened = nil
 		@base_moves = [[1,1],[2,2],[3,3],[4,4],[5,5],[6,6],[7,7],[-1,-1],[-2,-2],[-3,-3],[-4,-4],[-5,-5],[-6,-6],[-7,-7],[-1,1],[-2,2],[-3,3],[-4,4],[-5,5],[-6,6],[-7,7],[1,-1],[2,-2],[3,-3],[4,-4],[5,-5],[6,-6],[7,-7],[0,1],[0,2],[0,3],[0,4],[0,5],[0,6],[0,7],[0,-1],[0,-2],[0,-3],[0,-4],[0,-5],[0,-6],[0,-7],[-1,0], [-2,0],[-3,0],[-4,0],[-5,0],[-6,0],[-7,0],[1,0],[2,0],[3,0],[4,0],[5,0],[6,0],[7,0]]
