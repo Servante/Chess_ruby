@@ -6,11 +6,11 @@ class Game_piece
 
 	attr_accessor :name, :location, :token, :base_moves, :possible_moves, :squares_threatened, :value, :first_move 
 
-	def get_moves(location, result=[])
+	def get_moves(result=[])
 		@base_moves.each do |move|
 			# binding.pry
-			x = location[0] + move[0]
-			y = location[1] + move[1]
+			x = @location[0] + move[0]
+			y = @location[1] + move[1]
 			result << [x, y] if x.between?(0,7) && y.between?(0,7)
 		end
 		return result
