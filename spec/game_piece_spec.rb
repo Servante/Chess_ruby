@@ -21,7 +21,35 @@ describe Game_piece do
 				expect(result).to eq([[0,1]])
 			end
 		end
+
+		context "when game_piece is a rook and has a location of [3,2]" do
+
+			it "returns an array which includes [3,3]" do
+				rook = Rook.new([3,2], :rook1, "r")
+				result = rook.get_moves
+				expect(result).to be_an Array
+				expect(result).to include([3,3])
+			end
+		end
 	end
+
+	describe "#go_north" do
+		
+		context "when path to target is not blocked" do
+
+			it "returns true" do
+
+			end
+		end
+
+		context "when path to target is blocked" do
+
+			it "returns false" do
+
+			end
+
+		end
+	end		
 end
 
 

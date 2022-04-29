@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 require_relative 'cell.rb'
-require 'pry'
+# require 'pry'
 
 
 def reload
@@ -15,8 +15,8 @@ class Board
 	def initialize
 		# binding.pry
 		@cells = create_board
-		@white_pieces = create_white_pieces
-		@black_pieces = create_black_pieces
+		@white_pieces = nil
+		@black_pieces = nil
 	end
 
 	def show(color)
