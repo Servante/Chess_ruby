@@ -116,6 +116,9 @@ class Board
 		return game_bag
 	end
 
+	# def go_north(piece)
+		
+
 
 	
 	private
