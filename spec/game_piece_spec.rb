@@ -46,9 +46,10 @@ describe Game_piece do
 			end
 
 			it "returns true" do
+				board_cells = board.cells
 				target = [1,3]
 				location = rook.location
-				expect(board.go_north(location, target)).to_be true
+				expect(board.go_north(board_cells, location, target)).to be true
 			end
 		end
 
@@ -60,9 +61,10 @@ describe Game_piece do
 			end
 
 			xit "returns false" do
+				board_cells = board.cells
 				target = [1,3]
 				location = pawn.location
-				expect(board.go_north(location, target)).to_be false
+				expect(board.go_north(board_cells, location, target)).to be false
 			end
 		end
 	end		

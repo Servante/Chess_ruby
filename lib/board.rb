@@ -116,9 +116,21 @@ class Board
 		return game_bag
 	end
 
-	# def go_north(piece)
+	# def go_north(location, target)
 		
-
+	# 	if location == target && board.
+			
+	# 		x = location[0]
+	# 		y = location[1]
+	# 		binding.pry
+	# 		if board[x].nil? || board[y].nil? || board[x][y] != " "
+	# 			return false
+	# 		else
+	# 			go_north(board, [(x-1),y], target)
+	# 		end
+	# 	end
+	# 	return true
+	# end
 
 	
 	private
