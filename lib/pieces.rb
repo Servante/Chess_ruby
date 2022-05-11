@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'pry'
+# require 'pry'
 
 class Game_piece
 
@@ -15,7 +15,28 @@ class Game_piece
 		end
 		return result
 	end
+	
+	def go_north(location, target)
+		x = location[0]
+		y = location[1]
+
+		if location == target && @board.cells[x][y].value == " "
+			
+			return true
+
+		else
+
+			if board[x][y] != " "
+				return false
+			else
+				go_north(board, [(x-1),y], target)
+			end
+		end
+	end
 end
+
+  
+
 
 class Pawn < Game_piece
 	def initialize(location, name, token)

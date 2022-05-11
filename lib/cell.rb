@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'pry'
+# require 'pry'
 
 class Cell
 	attr_accessor :value, :stackable

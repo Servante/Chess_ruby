@@ -4,7 +4,7 @@
 require '../lib/board.rb'
 require '../lib/cell.rb'
 require '../lib/pieces.rb'
-require 'pry'
+# require 'pry'
 
 describe Board do
 
@@ -116,42 +116,6 @@ describe Board do
 			expect(game_pieces[:king].size).to eq(1)
 		end
 	end
-
-	describe "#go_north" do
-
-		subject(:board) {Board.new}
-		let (:rook) {Rook.new([4,3], :rook1, "r")}
-		let (:pawn) {Pawn.new([2,3], :pawn1, "p")}
-	
-		context "when path to target is not blocked" do
-
-			before do
-				board.cells[4][3].value = rook
-			end
-
-			it "returns true" do
-				board_cells = board.cells
-				target = [1,3]
-				location = rook.location
-				expect(board.go_north(board_cells, location, target)).to be true
-			end
-		end
-
-		context "when path to target is blocked" do
-
-			before do
-				board.cells[4][3].value = rook
-				board.cells[2][3].value = pawn
-			end
-
-			xit "returns false" do
-				board_cells = board.cells
-				target = [1,3]
-				location = pawn.location
-				expect(board.go_north(board_cells, location, target)).to be false
-			end
-		end
-	end		
 end
 
 

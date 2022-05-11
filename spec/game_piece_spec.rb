@@ -6,7 +6,7 @@ require '../lib/cell.rb'
 require '../lib/player.rb'
 require '../lib/display.rb'
 require '../lib/pieces.rb'
-require 'pry'
+# require 'pry'
 
 
 describe Game_piece do
@@ -49,7 +49,7 @@ describe Game_piece do
 				board_cells = board.cells
 				target = [1,3]
 				location = rook.location
-				expect(board.go_north(board_cells, location, target)).to be true
+				expect(rook.go_north(board_cells, location, target)).to be true
 			end
 		end
 
