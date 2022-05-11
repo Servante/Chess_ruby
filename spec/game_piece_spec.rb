@@ -63,7 +63,7 @@ describe Game_piece do
 			it "returns false" do
 				board_cells = board.cells
 				target = [1,3]
-				location = pawn.location
+				location = rook.location
 				expect(rook.go_north(board_cells, location, target)).to be false
 			end
 		end
@@ -74,7 +74,7 @@ describe Game_piece do
 
 		subject(:board) {Board.new}
 		let (:rook) {Rook.new([4,3], :rook1, "r")}
-		let (:pawn) {Pawn.new([2,3], :pawn1, "p")}
+		let (:pawn) {Pawn.new([7,3], :pawn1, "p")}
 	
 		context "when path to target is not blocked" do
 
@@ -84,9 +84,9 @@ describe Game_piece do
 
 			xit "returns true" do
 				board_cells = board.cells
-				target = [1,3]
+				target = [8,3]
 				location = rook.location
-				expect(rook.go_north(board_cells, location, target)).to be true
+				expect(rook.go_south(board_cells, location, target)).to be true
 			end
 		end
 
@@ -94,13 +94,13 @@ describe Game_piece do
 
 			before do
 				board.cells[4][3].value = rook
-				board.cells[2][3].value = pawn
+				board.cells[7][3].value = pawn
 			end
 
 			xit "returns false" do
 				board_cells = board.cells
-				target = [1,3]
-				location = pawn.location
+				target = [8,3]
+				location = rook.location
 				expect(rook.go_north(board_cells, location, target)).to be false
 			end
 		end
@@ -110,7 +110,7 @@ describe Game_piece do
 
 		subject(:board) {Board.new}
 		let (:rook) {Rook.new([4,3], :rook1, "r")}
-		let (:pawn) {Pawn.new([2,3], :pawn1, "p")}
+		let (:pawn) {Pawn.new([4,6], :pawn1, "p")}
 	
 		context "when path to target is not blocked" do
 
@@ -120,7 +120,7 @@ describe Game_piece do
 
 			xit "returns true" do
 				board_cells = board.cells
-				target = [1,3]
+				target = [4,7]
 				location = rook.location
 				expect(rook.go_north(board_cells, location, target)).to be true
 			end
@@ -130,59 +130,23 @@ describe Game_piece do
 
 			before do
 				board.cells[4][3].value = rook
-				board.cells[2][3].value = pawn
+				board.cells[4][6].value = pawn
 			end
 
 			xit "returns false" do
 				board_cells = board.cells
-				target = [1,3]
-				location = pawn.location
+				target = [4,7]
+				location = rook.location
 				expect(rook.go_north(board_cells, location, target)).to be false
 			end
 		end
 	end	
 
-	describe "#go_east" do
-
-		subject(:board) {Board.new}
-		let (:rook) {Rook.new([4,3], :rook1, "r")}
-		let (:pawn) {Pawn.new([2,3], :pawn1, "p")}
-	
-		context "when path to target is not blocked" do
-
-			before do
-				board.cells[4][3].value = rook
-			end
-
-			xit "returns true" do
-				board_cells = board.cells
-				target = [1,3]
-				location = rook.location
-				expect(rook.go_north(board_cells, location, target)).to be true
-			end
-		end
-
-		context "when path to target is blocked" do
-
-			before do
-				board.cells[4][3].value = rook
-				board.cells[2][3].value = pawn
-			end
-
-			xit "returns false" do
-				board_cells = board.cells
-				target = [1,3]
-				location = pawn.location
-				expect(rook.go_north(board_cells, location, target)).to be false
-			end
-		end
-	end
-
 	describe "#go_west" do
 
 		subject(:board) {Board.new}
 		let (:rook) {Rook.new([4,3], :rook1, "r")}
-		let (:pawn) {Pawn.new([2,3], :pawn1, "p")}
+		let (:pawn) {Pawn.new([4,1], :pawn1, "p")}
 	
 		context "when path to target is not blocked" do
 
@@ -192,7 +156,7 @@ describe Game_piece do
 
 			xit "returns true" do
 				board_cells = board.cells
-				target = [1,3]
+				target = [4,0]
 				location = rook.location
 				expect(rook.go_north(board_cells, location, target)).to be true
 			end
@@ -202,13 +166,13 @@ describe Game_piece do
 
 			before do
 				board.cells[4][3].value = rook
-				board.cells[2][3].value = pawn
+				board.cells[4][1].value = pawn
 			end
 
 			xit "returns false" do
 				board_cells = board.cells
-				target = [1,3]
-				location = pawn.location
+				target = [4,0]
+				location = rook.location
 				expect(rook.go_north(board_cells, location, target)).to be false
 			end
 		end
@@ -217,35 +181,35 @@ describe Game_piece do
 	describe "#go_northeast" do
 
 		subject(:board) {Board.new}
-		let (:rook) {Rook.new([4,3], :rook1, "r")}
-		let (:pawn) {Pawn.new([2,3], :pawn1, "p")}
+		let (:bishop) {Bishop.new([4,3], :bishop1, "b")}
+		let (:pawn) {Pawn.new([3,4], :pawn1, "p")}
 	
 		context "when path to target is not blocked" do
 
 			before do
-				board.cells[4][3].value = rook
+				board.cells[4][3].value = bishop
 			end
 
 			xit "returns true" do
 				board_cells = board.cells
-				target = [1,3]
-				location = rook.location
-				expect(rook.go_north(board_cells, location, target)).to be true
+				target = [2,5]
+				location = bishop.location
+				expect(bishop.go_north(board_cells, location, target)).to be true
 			end
 		end
 
 		context "when path to target is blocked" do
 
 			before do
-				board.cells[4][3].value = rook
-				board.cells[2][3].value = pawn
+				board.cells[4][3].value = bishop
+				board.cells[3][4].value = pawn
 			end
 
 			xit "returns false" do
 				board_cells = board.cells
-				target = [1,3]
-				location = pawn.location
-				expect(rook.go_north(board_cells, location, target)).to be false
+				target = [2,5]
+				location = bishop.location
+				expect(bishop.go_north(board_cells, location, target)).to be false
 			end
 		end
 	end
@@ -253,35 +217,35 @@ describe Game_piece do
 	describe "#go_northwest" do
 
 		subject(:board) {Board.new}
-		let (:rook) {Rook.new([4,3], :rook1, "r")}
-		let (:pawn) {Pawn.new([2,3], :pawn1, "p")}
+		let (:bishop) {Bishop.new([4,3], :bishop1, "b")}
+		let (:pawn) {Pawn.new([3,2], :pawn1, "p")}
 	
 		context "when path to target is not blocked" do
 
 			before do
-				board.cells[4][3].value = rook
+				board.cells[4][3].value = bishop
 			end
 
 			xit "returns true" do
 				board_cells = board.cells
-				target = [1,3]
-				location = rook.location
-				expect(rook.go_north(board_cells, location, target)).to be true
+				target = [2,1]
+				location = bishop.location
+				expect(bishop.go_north(board_cells, location, target)).to be true
 			end
 		end
 
 		context "when path to target is blocked" do
 
 			before do
-				board.cells[4][3].value = rook
-				board.cells[2][3].value = pawn
+				board.cells[4][3].value = bishop
+				board.cells[3][2].value = pawn
 			end
 
 			xit "returns false" do
 				board_cells = board.cells
-				target = [1,3]
-				location = pawn.location
-				expect(rook.go_north(board_cells, location, target)).to be false
+				target = [2,1]
+				location = bishop.location
+				expect(bishop.go_north(board_cells, location, target)).to be false
 			end
 		end
 	end	
@@ -289,35 +253,35 @@ describe Game_piece do
 	describe "#go_southeast" do
 
 		subject(:board) {Board.new}
-		let (:rook) {Rook.new([4,3], :rook1, "r")}
-		let (:pawn) {Pawn.new([2,3], :pawn1, "p")}
+		let (:bishop) {Bishop.new([4,3], :bishop1, "b")}
+		let (:pawn) {Pawn.new([6,5], :pawn1, "p")}
 	
 		context "when path to target is not blocked" do
 
 			before do
-				board.cells[4][3].value = rook
+				board.cells[4][3].value = bishop
 			end
 
 			xit "returns true" do
 				board_cells = board.cells
-				target = [1,3]
-				location = rook.location
-				expect(rook.go_north(board_cells, location, target)).to be true
+				target = [7,6]
+				location = bishop.location
+				expect(bishop.go_north(board_cells, location, target)).to be true
 			end
 		end
 
 		context "when path to target is blocked" do
 
 			before do
-				board.cells[4][3].value = rook
-				board.cells[2][3].value = pawn
+				board.cells[4][3].value = bishop
+				board.cells[6][5].value = pawn
 			end
 
 			xit "returns false" do
 				board_cells = board.cells
-				target = [1,3]
-				location = pawn.location
-				expect(rook.go_north(board_cells, location, target)).to be false
+				target = [7,6]
+				location = bishop.location
+				expect(bishop.go_north(board_cells, location, target)).to be false
 			end
 		end
 	end	
@@ -325,35 +289,35 @@ describe Game_piece do
 	describe "#go_southwest" do
 
 		subject(:board) {Board.new}
-		let (:rook) {Rook.new([4,3], :rook1, "r")}
-		let (:pawn) {Pawn.new([2,3], :pawn1, "p")}
+		let (:bishop) {Bishop.new([4,3], :bishop1, "b")}
+		let (:pawn) {Pawn.new([5,2], :pawn1, "p")}
 	
 		context "when path to target is not blocked" do
 
 			before do
-				board.cells[4][3].value = rook
+				board.cells[4][3].value = bishop
 			end
 
 			xit "returns true" do
 				board_cells = board.cells
-				target = [1,3]
-				location = rook.location
-				expect(rook.go_north(board_cells, location, target)).to be true
+				target = [6,1]
+				location = bishop.location
+				expect(bishop.go_north(board_cells, location, target)).to be true
 			end
 		end
 
 		context "when path to target is blocked" do
 
 			before do
-				board.cells[4][3].value = rook
-				board.cells[2][3].value = pawn
+				board.cells[4][3].value = bishop
+				board.cells[5][2].value = pawn
 			end
 
 			xit "returns false" do
 				board_cells = board.cells
-				target = [1,3]
-				location = pawn.location
-				expect(rook.go_north(board_cells, location, target)).to be false
+				target = [6,1]
+				location = bishop.location
+				expect(bishop.go_north(board_cells, location, target)).to be false
 			end
 		end
 	end													
