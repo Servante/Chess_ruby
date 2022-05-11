@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# require 'pry'
+require 'pry'
 
 class Game_piece
 
@@ -15,18 +15,16 @@ class Game_piece
 		end
 		return result
 	end
-	
-	def go_north(location, target)
+
+	def go_north(board, location, target)
 		x = location[0]
 		y = location[1]
+		# binding.pry
 
-		if location == target && @board.cells[x][y].value == " "
-			
-			return true
-
+		if location == target && board[x][y].value == " "
+		  return true
 		else
-
-			if board[x][y] != " "
+			if board[x][y].value != " " && board[x][y].value != self
 				return false
 			else
 				go_north(board, [(x-1),y], target)
