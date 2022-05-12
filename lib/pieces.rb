@@ -19,7 +19,6 @@ class Game_piece
 	def go_north(board, location, target)
 		x = location[0]
 		y = location[1]
-		# binding.pry
 
 		if location == target && board[x][y].value == " "
 		  return true
@@ -28,6 +27,111 @@ class Game_piece
 				return false
 			else
 				go_north(board, [(x-1),y], target)
+			end
+		end
+	end
+
+	def go_south(board, location, target)
+		x = location[0]
+		y = location[1]
+
+		if location == target && board[x][y].value == " "
+		  return true
+		else
+			if board[x][y].value != " " && board[x][y].value != self
+				return false
+			else
+				go_south(board, [(x+1),y], target)
+			end
+		end
+	end
+
+	def go_east(board, location, target)
+		x = location[0]
+		y = location[1]
+
+		if location == target && board[x][y].value == " "
+		  return true
+		else
+			if board[x][y].value != " " && board[x][y].value != self
+				return false
+			else
+				go_east(board, [x,(y+1)], target)
+			end
+		end
+	end
+
+	def go_west(board, location, target)
+		x = location[0]
+		y = location[1]
+
+		if location == target && board[x][y].value == " "
+		  return true
+		else
+			if board[x][y].value != " " && board[x][y].value != self
+				return false
+			else
+				go_west(board, [x,(y-1)], target)
+			end
+		end
+	end
+
+	def go_northeast(board, location, target)
+		x = location[0]
+		y = location[1]
+
+		if location == target && board[x][y].value == " "
+		  return true
+		else
+			if board[x][y].value != " " && board[x][y].value != self
+				return false
+			else
+				go_northeast(board, [(x-1),(y+1)], target)
+			end
+		end
+	end
+
+	def go_northwest(board, location, target)
+		x = location[0]
+		y = location[1]
+
+		if location == target && board[x][y].value == " "
+		  return true
+		else
+			if board[x][y].value != " " && board[x][y].value != self
+				return false
+			else
+				go_northwest(board, [(x-1),(y-1)], target)
+			end
+		end
+	end
+
+	def go_southeast(board, location, target)
+		x = location[0]
+		y = location[1]
+
+		if location == target && board[x][y].value == " "
+		  return true
+		else
+			if board[x][y].value != " " && board[x][y].value != self
+				return false
+			else
+				go_southeast(board, [(x+1),(y+1)], target)
+			end
+		end
+	end
+
+	def go_southwest(board, location, target)
+		x = location[0]
+		y = location[1]
+
+		if location == target && board[x][y].value == " "
+		  return true
+		else
+			if board[x][y].value != " " && board[x][y].value != self
+				return false
+			else
+				go_southwest(board, [(x+1),(y-1)], target)
 			end
 		end
 	end

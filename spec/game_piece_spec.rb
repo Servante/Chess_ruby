@@ -82,7 +82,7 @@ describe Game_piece do
 				board.cells[4][3].value = rook
 			end
 
-			xit "returns true" do
+			it "returns true" do
 				board_cells = board.cells
 				target = [8,3]
 				location = rook.location
@@ -97,11 +97,11 @@ describe Game_piece do
 				board.cells[7][3].value = pawn
 			end
 
-			xit "returns false" do
+			it "returns false" do
 				board_cells = board.cells
 				target = [8,3]
 				location = rook.location
-				expect(rook.go_north(board_cells, location, target)).to be false
+				expect(rook.go_south(board_cells, location, target)).to be false
 			end
 		end
 	end
@@ -118,11 +118,11 @@ describe Game_piece do
 				board.cells[4][3].value = rook
 			end
 
-			xit "returns true" do
+			it "returns true" do
 				board_cells = board.cells
 				target = [4,7]
 				location = rook.location
-				expect(rook.go_north(board_cells, location, target)).to be true
+				expect(rook.go_east(board_cells, location, target)).to be true
 			end
 		end
 
@@ -133,11 +133,11 @@ describe Game_piece do
 				board.cells[4][6].value = pawn
 			end
 
-			xit "returns false" do
+			it "returns false" do
 				board_cells = board.cells
 				target = [4,7]
 				location = rook.location
-				expect(rook.go_north(board_cells, location, target)).to be false
+				expect(rook.go_east(board_cells, location, target)).to be false
 			end
 		end
 	end	
@@ -154,11 +154,11 @@ describe Game_piece do
 				board.cells[4][3].value = rook
 			end
 
-			xit "returns true" do
+			it "returns true" do
 				board_cells = board.cells
 				target = [4,0]
 				location = rook.location
-				expect(rook.go_north(board_cells, location, target)).to be true
+				expect(rook.go_west(board_cells, location, target)).to be true
 			end
 		end
 
@@ -169,11 +169,11 @@ describe Game_piece do
 				board.cells[4][1].value = pawn
 			end
 
-			xit "returns false" do
+			it "returns false" do
 				board_cells = board.cells
 				target = [4,0]
 				location = rook.location
-				expect(rook.go_north(board_cells, location, target)).to be false
+				expect(rook.go_west(board_cells, location, target)).to be false
 			end
 		end
 	end
@@ -190,11 +190,11 @@ describe Game_piece do
 				board.cells[4][3].value = bishop
 			end
 
-			xit "returns true" do
+			it "returns true" do
 				board_cells = board.cells
 				target = [2,5]
 				location = bishop.location
-				expect(bishop.go_north(board_cells, location, target)).to be true
+				expect(bishop.go_northeast(board_cells, location, target)).to be true
 			end
 		end
 
@@ -205,11 +205,11 @@ describe Game_piece do
 				board.cells[3][4].value = pawn
 			end
 
-			xit "returns false" do
+			it "returns false" do
 				board_cells = board.cells
 				target = [2,5]
 				location = bishop.location
-				expect(bishop.go_north(board_cells, location, target)).to be false
+				expect(bishop.go_northeast(board_cells, location, target)).to be false
 			end
 		end
 	end
@@ -226,11 +226,11 @@ describe Game_piece do
 				board.cells[4][3].value = bishop
 			end
 
-			xit "returns true" do
+			it "returns true" do
 				board_cells = board.cells
 				target = [2,1]
 				location = bishop.location
-				expect(bishop.go_north(board_cells, location, target)).to be true
+				expect(bishop.go_northwest(board_cells, location, target)).to be true
 			end
 		end
 
@@ -241,11 +241,11 @@ describe Game_piece do
 				board.cells[3][2].value = pawn
 			end
 
-			xit "returns false" do
+			it "returns false" do
 				board_cells = board.cells
 				target = [2,1]
 				location = bishop.location
-				expect(bishop.go_north(board_cells, location, target)).to be false
+				expect(bishop.go_northwest(board_cells, location, target)).to be false
 			end
 		end
 	end	
@@ -262,11 +262,11 @@ describe Game_piece do
 				board.cells[4][3].value = bishop
 			end
 
-			xit "returns true" do
+			it "returns true" do
 				board_cells = board.cells
 				target = [7,6]
 				location = bishop.location
-				expect(bishop.go_north(board_cells, location, target)).to be true
+				expect(bishop.go_southeast(board_cells, location, target)).to be true
 			end
 		end
 
@@ -277,11 +277,11 @@ describe Game_piece do
 				board.cells[6][5].value = pawn
 			end
 
-			xit "returns false" do
+			it "returns false" do
 				board_cells = board.cells
 				target = [7,6]
 				location = bishop.location
-				expect(bishop.go_north(board_cells, location, target)).to be false
+				expect(bishop.go_southeast(board_cells, location, target)).to be false
 			end
 		end
 	end	
@@ -298,11 +298,11 @@ describe Game_piece do
 				board.cells[4][3].value = bishop
 			end
 
-			xit "returns true" do
+			it "returns true" do
 				board_cells = board.cells
 				target = [6,1]
 				location = bishop.location
-				expect(bishop.go_north(board_cells, location, target)).to be true
+				expect(bishop.go_southwest(board_cells, location, target)).to be true
 			end
 		end
 
@@ -313,11 +313,11 @@ describe Game_piece do
 				board.cells[5][2].value = pawn
 			end
 
-			xit "returns false" do
+			it "returns false" do
 				board_cells = board.cells
 				target = [6,1]
 				location = bishop.location
-				expect(bishop.go_north(board_cells, location, target)).to be false
+				expect(bishop.go_southwest(board_cells, location, target)).to be false
 			end
 		end
 	end													
