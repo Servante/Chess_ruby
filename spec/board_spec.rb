@@ -116,6 +116,78 @@ describe Board do
 			expect(game_pieces[:king].size).to eq(1)
 		end
 	end
+
+	describe '#path_to_move_clear?' do
+
+		let (:bishop) {Bishop.new([4,3], :bishop1, "b")}
+		let (:rook) {Rook.new([4,3], :rook1, "r")}
+
+
+
+		context 'when the target is north of the game_piece' do
+
+			xit 'calls #go_north' do
+				board.path_to_move_clear?(rook, [1,3])
+				expect(rook).to receive(:go_north)
+			end
+		end
+
+		context 'when the target is south of the game_piece' do
+
+			xit "calls #go_south" do
+				board.path_to_move_clear?(rook, [5,3])
+				expect(rook).to receive(:go_south)
+			end
+		end
+
+		context 'when the target is west of the game_piece' do
+
+			xit "calls #go_west" do
+				board.path_to_move_clear?(rook, [4,2])
+				expect(rook).to receive(:go_west)
+			end
+		end
+
+		context 'when the target is east of the game_piece' do
+
+			xit "calls #go_east" do
+				board.path_to_move_clear?(rook, [4,4])
+				expect(rook).to receive(:go_east)
+			end
+		end
+
+		context 'when the target is northwest of the game_piece' do
+
+			xit "calls #go_northwest" do
+				board.path_to_move_clear?(bishop, [3,2])
+				expect(bishop).to receive(:go_northwest)
+			end
+		end
+
+		context 'when the target is southwest of the game_piece' do
+
+			xit "calls #go_southwest" do
+				board.path_to_move_clear?(bishop, [5,2])
+				expect(bishop).to receive(:go_southwest)
+			end
+		end
+
+		context 'when the target is northeast of the game_piece' do
+
+			xit "calls #go_northeast" do
+				board.path_to_move_clear?(bishop, [3,4])
+				expect(bishop).to receive(:go_northeast)
+			end
+		end
+
+		context 'when the target is southeast of the game_piece' do
+
+			xit "calls #go_southeast" do
+				board.path_to_move_clear?(bishop, [5,4])
+				expect(bishop).to receive(:go_southeast)
+			end
+		end
+	end
 end
 
 
