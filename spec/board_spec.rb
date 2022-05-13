@@ -117,6 +117,9 @@ describe Board do
 		end
 	end
 
+
+
+
 	describe '#path_to_move_clear?' do
 
 		let (:bishop) {Bishop.new([4,3], :bishop1, "b")}
@@ -126,65 +129,73 @@ describe Board do
 
 		context 'when the target is north of the game_piece' do
 
-			xit 'calls #go_north' do
-				board.path_to_move_clear?(rook, [1,3])
+			it 'calls #go_north' do
+				board = Board.new
 				expect(rook).to receive(:go_north)
+				board.path_to_move_clear?(board.cells, rook, [1,3])				
 			end
 		end
 
 		context 'when the target is south of the game_piece' do
 
-			xit "calls #go_south" do
-				board.path_to_move_clear?(rook, [5,3])
+			xit 'calls #go_north' do
+				board = Board.new
 				expect(rook).to receive(:go_south)
+				board.path_to_move_clear?(board.cells, rook, [5,3])
 			end
 		end
 
 		context 'when the target is west of the game_piece' do
 
 			xit "calls #go_west" do
-				board.path_to_move_clear?(rook, [4,2])
+				board = Board.new
 				expect(rook).to receive(:go_west)
+				board.path_to_move_clear?(board.cells, rook, [4,2])
 			end
 		end
 
 		context 'when the target is east of the game_piece' do
 
 			xit "calls #go_east" do
-				board.path_to_move_clear?(rook, [4,4])
+				board = Board.new
 				expect(rook).to receive(:go_east)
+				board.path_to_move_clear?(board.cells, rook, [4,4])
 			end
 		end
 
 		context 'when the target is northwest of the game_piece' do
 
 			xit "calls #go_northwest" do
-				board.path_to_move_clear?(bishop, [3,2])
+				board = Board.new
 				expect(bishop).to receive(:go_northwest)
+				board.path_to_move_clear?(board.cells, bishop, [3,2])
 			end
 		end
 
 		context 'when the target is southwest of the game_piece' do
 
 			xit "calls #go_southwest" do
-				board.path_to_move_clear?(bishop, [5,2])
+				board = Board.new
 				expect(bishop).to receive(:go_southwest)
+				board.path_to_move_clear?(board.cells, bishop, [5,2])
 			end
 		end
 
 		context 'when the target is northeast of the game_piece' do
 
 			xit "calls #go_northeast" do
-				board.path_to_move_clear?(bishop, [3,4])
+				board = Board.new
 				expect(bishop).to receive(:go_northeast)
+				board.path_to_move_clear?(board.cells, bishop, [3,4])
 			end
 		end
 
 		context 'when the target is southeast of the game_piece' do
 
 			xit "calls #go_southeast" do
-				board.path_to_move_clear?(bishop, [5,4])
+				board = Board.new
 				expect(bishop).to receive(:go_southeast)
+				board.path_to_move_clear?(board.cells, bishop, [5,4])
 			end
 		end
 	end

@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 require_relative 'cell.rb'
-# require 'pry'
+require 'pry'
 
 
 def reload
@@ -115,6 +115,32 @@ class Board
 		:king => create_black_king}
 		return game_bag
 	end
+
+	def path_to_move_clear?(board, game_piece, move)
+		
+		location = game_piece.location
+		board = board
+    # binding.pry
+		if location[0] > move[0] && location[1] == move[1]  
+			game_piece.go_north(board, location, move)
+		elsif location[0] > move[0] && location[1] == move[1]
+			game_piece.go_south(board, location, move)
+		elsif location[0] == move[0] && location[1] > move[1]  
+			game_piece.go_west(board, location, move)
+		elsif location[0] == move[0] && location[1] < move[1]   
+			game_piece.go_east(board, location, move)
+		elsif location[0] > move[0] && location[1] > move[1]   
+			game_piece.go_northwest(board, location, move)
+		elsif location[0] > move[0] && location[1] < move[1]   
+			game_piece.go_northeast(board, location, move)
+		elsif location[0] < move[0] && location[1] > move[1]   
+			game_piece.go_southwest(board, location, move)
+		elsif location[0] < move[0] && location[1] < move[1]
+			game_piece.go_southeast(board, location, move)
+		end
+	end
+
+
 
 	
 	private
