@@ -123,7 +123,7 @@ class Board
     # binding.pry
 		if location[0] > move[0] && location[1] == move[1]  
 			game_piece.go_north(board, location, move)
-		elsif location[0] > move[0] && location[1] == move[1]
+		elsif location[0] < move[0] && location[1] == move[1]
 			game_piece.go_south(board, location, move)
 		elsif location[0] == move[0] && location[1] > move[1]  
 			game_piece.go_west(board, location, move)

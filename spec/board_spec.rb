@@ -138,7 +138,7 @@ describe Board do
 
 		context 'when the target is south of the game_piece' do
 
-			xit 'calls #go_north' do
+			it 'calls #go_south' do
 				board = Board.new
 				expect(rook).to receive(:go_south)
 				board.path_to_move_clear?(board.cells, rook, [5,3])
@@ -147,7 +147,7 @@ describe Board do
 
 		context 'when the target is west of the game_piece' do
 
-			xit "calls #go_west" do
+			it "calls #go_west" do
 				board = Board.new
 				expect(rook).to receive(:go_west)
 				board.path_to_move_clear?(board.cells, rook, [4,2])
@@ -156,7 +156,7 @@ describe Board do
 
 		context 'when the target is east of the game_piece' do
 
-			xit "calls #go_east" do
+			it "calls #go_east" do
 				board = Board.new
 				expect(rook).to receive(:go_east)
 				board.path_to_move_clear?(board.cells, rook, [4,4])
@@ -165,7 +165,7 @@ describe Board do
 
 		context 'when the target is northwest of the game_piece' do
 
-			xit "calls #go_northwest" do
+			it "calls #go_northwest" do
 				board = Board.new
 				expect(bishop).to receive(:go_northwest)
 				board.path_to_move_clear?(board.cells, bishop, [3,2])
@@ -174,7 +174,7 @@ describe Board do
 
 		context 'when the target is southwest of the game_piece' do
 
-			xit "calls #go_southwest" do
+			it "calls #go_southwest" do
 				board = Board.new
 				expect(bishop).to receive(:go_southwest)
 				board.path_to_move_clear?(board.cells, bishop, [5,2])
@@ -183,7 +183,7 @@ describe Board do
 
 		context 'when the target is northeast of the game_piece' do
 
-			xit "calls #go_northeast" do
+			it "calls #go_northeast" do
 				board = Board.new
 				expect(bishop).to receive(:go_northeast)
 				board.path_to_move_clear?(board.cells, bishop, [3,4])
@@ -192,7 +192,7 @@ describe Board do
 
 		context 'when the target is southeast of the game_piece' do
 
-			xit "calls #go_southeast" do
+			it "calls #go_southeast" do
 				board = Board.new
 				expect(bishop).to receive(:go_southeast)
 				board.path_to_move_clear?(board.cells, bishop, [5,4])
