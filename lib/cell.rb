@@ -3,9 +3,10 @@
 # require 'pry'
 
 class Cell
-	attr_accessor :value, :stackable
+	attr_accessor :square, :value, :stackable
 
-	def initialize(value = " ")
+	def initialize(square, value = " ")
+		@square = square
 		@value = value
 	end
 
