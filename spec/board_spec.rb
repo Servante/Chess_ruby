@@ -34,7 +34,26 @@ describe Board do
 			board = Board.new
 			expect(board.class).to be(Board)
 		end
+
+		it 'adds the name "a1" to cell in position [8,0]' do
+			board = Board.new
+			expect(board.cells[8][0].square).to eq('a1')
+		end
+
+		it 'adds the name "f7" to cell in position [2,5]' do
+			board = Board.new
+			expect(board.cells[2][5].square).to eq('f7')
+		end
+
+		it 'adds the name "c5" to cell in position [4,2]' do
+			board = Board.new
+			expect(board.cells[4][2].square).to eq('c5')
+		end
 	end
+
+
+		
+
 
 	describe '#create_white_pieces' do
                                                                                                                                      
